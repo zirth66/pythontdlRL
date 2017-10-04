@@ -9,10 +9,12 @@ def main():
 
 	root_console = tdl.init(screen_width, screen_height, title='Roguelike Tutorial Revised')
 
+	#game loop
 	while not tdl.event.is_window_closed():
 		root_console.draw_char(1, 1, '@', bg=None, fg=(255, 255, 255))
 		tdl.flush()
 
+		#'erase' the character before drawing it again, so not leaving a trail of characters
 		root_console.draw_char(1, 1, ' ', bg=None)
 
 		for event in tdl.event.get():
